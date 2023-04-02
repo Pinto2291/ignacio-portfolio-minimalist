@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignacio Portfolio 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    
+</head>
+<body>
+
+    <div class="wrapper">
+      <ul class="menu">
+        <li><a onclick="toggleMenu()" href="#">Home</a></li>
+        <li><a onclick="toggleMenu()" href="#about">About</a></li>
+        <li><a onclick="toggleMenu()" href="#">Services</a></li>
+        <li><a onclick="toggleMenu()" href="#">Gallery</a></li>
+      </ul>
+    </div>
+
+    <nav class="navbar">
+
+      <button onclick="toggleMenu()" id="menuButton" class="navbar-menu">
+        <div class="navbar-menu-element"></div>
+        <div class="navbar-menu-element"></div>
+        <div class="navbar-menu-element"></div>
+      </button>
+
+        <div class="navbar-name-container">
+          <h2 class="bold uppercase navbar-name ">Ignacio</>
+        </div>
+
+        <div class="navbar-icons-parent">
+
+          <ul class="navbar-icons">
+
+            <li><a href="#"><img class="fill-white" src="./svg//svg2.svg" alt="github"></a></li>
+  
+            <li><a href="#"><img class="fill-white" src="./svg/svg3.svg" alt="linkedin"></a></li>
+  
+            <li><a href="#"><img class="fill-white" src="./svg/svg1.svg" alt="twitter"></a></li>
+          
+          </ul>
+
+        </div>
+
+    </nav>
+
+    <header class="header">
+
+      <div class="header-title">
+
+        <h1 class="ml6 header-text">
+            <span class="text-wrapper">
+              <span class="letters font-white bold-700 fn-6">Hi, I'm Ignacio</span>
+            </span>
+        </h1>
+
+      </div>
+
+      <div class="header-developer">
+        <h3 class="font-white bold-700 uppercase fn-4">Developer</h3>
+      </div>
+
+      <div class="header-designer">
+        <h3 class="bold-700 uppercase fn-4">Designer</h3>
+      </div>
+
+    </header>
+
+    <section id="about" class="about">
+
+      <h3 class="bold-700 fn-9 pointer about-title">A<span>bout</span>.</h3>
+
+      <div class="about-section">
+
+        <p class="fn-6 text-center font-white">I'm a <span class="font-red-1">Frontend Developer</span><br> that creates dinamic and visually <br> appealing websites</p>
+
+        <div class="about-flex-art-container">
+          <div class="about-flex-art">
+            <div class="about-flex-art-item flex-art1"></div>
+            <div class="about-flex-art-item flex-art2"></div>
+            <div class="about-flex-art-item flex-art3"></div>
+            <div class="about-flex-art-item flex-art4"></div>
+            <div class="about-flex-art-item flex-art5"></div>
+            <div class="about-flex-art-item flex-art6"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="services">
+
+      <h3 class="bold-700 fn-9 pointer">Services.</h3>
+
+      <div class="services-section">
+
+        <p class="fn-6 text-center font-white">I use stable <span class="font-red-1">code</span> and minimalist <br> design on every project</p>
+
+      </div>
+
+    </section>
+
+    <script src="./jquery.js"></script>
+    <script src="./anime.js"></script>
+    <script src="./app.js"></script>
+    
+</body>
+</html>
