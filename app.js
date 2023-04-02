@@ -41,7 +41,9 @@ $('#menuButton').on('click', () => {
 })
 
 $('.about-flex-art-item').on('mouseenter', (event) => {
-    $(event.currentTarget).siblings($('.about-flex-art-item')).addClass('rotate')
+    $(event.currentTarget).siblings($('.about-flex-art-item')).addClass('rotation')
+    $(event.currentTarget).addClass('scale-80')
 }).on('mouseleave', (event) => {
-    $(event.currentTarget).siblings($('.about-flex-art-item')).removeClass('rotate')
+    $(event.currentTarget).siblings($('.about-flex-art-item')).removeClass('rotation')
+    $(event.currentTarget).removeClass('scale-80')
 })

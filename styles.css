@@ -401,8 +401,24 @@ svg {
     transform: rotate(45deg);
 }
 
-.scale-120 {
-    transform: scale(120%);
+.scale-80 {
+    transform: scale(80%);
+    z-index: 3;
+}
+
+.rotation {
+    animation: rotation 5s infinite linear;
+}
+
+
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
 }
 
 .about-flex-art {
