@@ -295,12 +295,13 @@ svg {
 /* HEADER */
 
 .header {
-    height: clamp(200px, 500px, 800px);
+    /*height: clamp(200px, 500px, 800px);*/
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
+    width: auto;
 }
 
 .header h1 {
@@ -315,6 +316,7 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 4rem 0;
 }
 
 .header-developer, .header-designer {
@@ -326,17 +328,15 @@ svg {
     transition: all 350ms ease-in-out 150ms;
 }
 
-.header-developer:hover, .header-designer:hover {
-    letter-spacing: 1.5rem;
-}
-
 .header-developer {
     background-color: var(--bg-red-1);
+    padding: 4rem 0;
 }
 
 .header-designer {
     background-color: var(--bg-grey-1);
     color: #1A1A1A;
+    padding: 4rem 0;
 }
 
 /* TITLE */
@@ -363,36 +363,27 @@ svg {
 
 /* ABOUT */
 
-.about, .services {
+.about-title {
     position: relative;
-    margin-top: 8.7rem;
+    top: 2.6rem;
 }
 
 .about-section {
     background-color: var(--bg-black-2);
-    height: 80rem;
+    height: auto;
     padding-top: 2rem;
-}
-
-.about > h3 {
-    position: absolute;
-    top: -8.5rem;
-    margin-left: 2rem;
+    padding-bottom: 2rem;
 }
 
 .about-title, .services-title {
     transition: all 350ms ease-in-out 100ms;
 }
 
-.about-title:hover, .services-title:hover {
-    letter-spacing: 1.2rem;
-}
-
 .about-flex-art-container {
     display: flex;
     justify-content: center;
-    width: 40rem;
-    height: 40rem;
+    width: 30rem;
+    height: 30rem;
     margin: auto;
     margin-top: 4rem;
 }
@@ -409,8 +400,6 @@ svg {
 .rotation {
     animation: rotation 5s infinite linear;
 }
-
-
 
 @keyframes rotation {
     from {
@@ -478,19 +467,34 @@ svg {
 
 /* SERVICES */
 
+.services {
+    position: relative;
+    margin-top: 8.7rem;
+    height: auto;
+}
+
 .services-section {
     background-color: var(--bg-green-1);
-    height: 80rem;
     padding-top: 2rem;
 }
 
 .services > h3 {
     position: absolute;
     top: -8.5rem;
-    margin-left: 2rem;
 }
 
 /* MEDIA QUERIES */
+
+@media (width >= 769px) {
+    .about-title:hover, .services-title:hover {
+        letter-spacing: 1.2rem;
+    }
+
+    .header-developer:hover, .header-designer:hover {
+        letter-spacing: 1.5rem;
+    }
+    
+}
 
 @media (width <= 768px) {
 
@@ -504,6 +508,16 @@ svg {
 
     .fn-6 {font-size: 3.5rem;}
 
+    .fn-7 {font-size: 3.8rem;}
+
+    .fn-8 {font-size: 4.1rem;}
+
+    .fn-9 {font-size: 5rem;}
+
+    .navbar-name {
+        font-size: 2rem;
+    }
+
     .header-title {
         grid-column: 1 / 3;
         grid-row: 1 / 2;
@@ -514,6 +528,11 @@ svg {
         grid-template-columns: 50% 50%;
     }
 
+    .navbar-menu {
+        width: 3rem;
+        height: 3rem;
+    }
+
     .navbar-name-container {
         justify-self: flex-end;
     }
@@ -521,5 +540,42 @@ svg {
     .navbar-icons {
         display: none;
     }
+
+    .about-flex-art-container {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .about-title:active, .services-title:active {
+        letter-spacing: 1.2rem;
+    }
+
+    .header-developer:active, .header-designer:active {
+        letter-spacing: 1.5rem;
+    }
     
+}
+
+@media (width <= 500px) {
+
+    .fn-2 {font-size: 0.8rem;}
+
+    .fn-3 {font-size: 1rem;}
+
+    .fn-4 {font-size: 1.5rem;}
+
+    .fn-5 {font-size: 2.1rem;}
+
+    .fn-6 {font-size: 2.5rem;}
+
+    .fn-7 {font-size: 3rem;}
+
+    .fn-8 {font-size: 3.5rem;}
+
+    .fn-9 {font-size: 3.8rem;}
+
+    .about-flex-art-container {
+        width: 10rem;
+        height: 10rem;
+    }
 }

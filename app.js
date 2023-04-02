@@ -40,10 +40,13 @@ $('#menuButton').on('click', () => {
     $('.header').nextAll().fadeToggle(650);
 })
 
-$('.about-flex-art-item').on('mouseenter', (event) => {
-    $(event.currentTarget).siblings($('.about-flex-art-item')).addClass('rotation')
-    $(event.currentTarget).addClass('scale-80')
-}).on('mouseleave', (event) => {
+$('.about-flex-art-item').on('click', (event) => {
+    $(event.currentTarget).siblings($('.about-flex-art-item')).toggleClass('rotation')
+    $(event.currentTarget).toggleClass('scale-80')
+})
+
+/*
+.on('mouseleave', (event) => {
     $(event.currentTarget).siblings($('.about-flex-art-item')).removeClass('rotation')
     $(event.currentTarget).removeClass('scale-80')
-})
+})*/
