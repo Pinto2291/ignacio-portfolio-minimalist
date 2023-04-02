@@ -40,7 +40,8 @@ $('#menuButton').on('click', () => {
     $('.header').nextAll().fadeToggle(650);
 })
 
-$('.about-flex-art-item').on('click', (event) => {
-    $(event.currentTarget).siblings().slideToggle(800)
+$('.about-flex-art-item').on('mouseenter', (event) => {
+    $(event.currentTarget).siblings($('.about-flex-art-item')).addClass('rotate')
+}).on('mouseleave', (event) => {
+    $(event.currentTarget).siblings($('.about-flex-art-item')).removeClass('rotate')
 })
-

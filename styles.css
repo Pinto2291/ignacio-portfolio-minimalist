@@ -380,11 +380,11 @@ svg {
     margin-left: 2rem;
 }
 
-.about-title {
+.about-title, .services-title {
     transition: all 350ms ease-in-out 100ms;
 }
 
-.about-title:hover {
+.about-title:hover, .services-title:hover {
     letter-spacing: 1.2rem;
 }
 
@@ -395,6 +395,14 @@ svg {
     height: 40rem;
     margin: auto;
     margin-top: 4rem;
+}
+
+.rotate {
+    transform: rotate(45deg);
+}
+
+.scale-120 {
+    transform: scale(120%);
 }
 
 .about-flex-art {
