@@ -17,8 +17,8 @@
       <ul class="menu fn-5">
         <li><a onclick="toggleMenu()" href="#">Home</a></li>
         <li><a onclick="toggleMenu()" href="#about">About</a></li>
+        <li><a onclick="toggleMenu()" href="#">Design</a></li>
         <li><a onclick="toggleMenu()" href="#">Services</a></li>
-        <li><a onclick="toggleMenu()" href="#">Gallery</a></li>
       </ul>
     </div>
 
@@ -82,7 +82,7 @@
 
       <div class="about-section">
 
-        <p class="fn-6 text-center font-white">I'm a <span class="font-red-1 about-section-span">Frontend Developer</span><br> that creates dinamic and visually <br> appealing websites</p>
+        <p class="fn-5 text-center font-white">I'm a <span class="font-red-1 about-section-span bold">Frontend Developer</span><br> that creates dinamic and visually <br> appealing websites</p>
 
         <div class="about-flex-art-container">
           <div class="about-flex-art">
@@ -95,35 +95,99 @@
           </div>
         </div>
 
+        <p class="font-white fn-3 text-center regular-400">I use semantic <span class="bold font-red-1">HTML</span> and <span class="bold font-red-1">CSS</span><br> to provide a consistent website experience</p>
+
       </div>
 
     </section>
 
-    <h3 class="bold-700 fn-9 pointer services-title">Services.</h3>
+    <h3 class="bold-700 fn-9 pointer services-title">Design.</h3>
 
     <section class="services">
 
       <div class="services-section">
 
-        <p class="fn-6 text-center font-white">I use stable <span class="font-red-1">code</span> and minimalist <br> design on every project</p>
+        <p class="fn-5 text-center font-white">I use stable <span class="font-red-1 bold">code</span> <br> and <span class="bold">minimalist</span> design</p>
 
       </div>
 
-      <div class="services-flex">
-        <div class="services-flex-item flex-item-1"></div>
-        <div class="services-flex-item flex-item-2"></div>
-        <div class="services-flex-item flex-item-3"></div>
+      <div class="services-1">
+
+        <p class="fn-3 font-white bold-2 text-center">Flex-Box</p>
+
+        <div class="services-flex services-flex-box">
+          <div class="services-flex-item flex-item flex-item-1"></div>
+          <div class="services-flex-item flex-item flex-item-2"></div>
+          <div class="services-flex-item flex-item flex-item-3"></div>
+        </div>
+  
+        <div class="services-buttons">
+          <button class="animation-button animation-play fn-3 font-white bold">play</button>
+          <button class="animation-button animation-pause fn-3 font-white bold">pause</button>
+        </div>  
+
       </div>
 
-      <div class="services-buttons">
-        <button class="animation-play fn-3 font-white">play</button>
-        <button class="animation-pause fn-3 font-white">pause</button>
-      </div>      
+      <div class="services-2">
+
+        <p class="fn-3 font-white bold-2 text-center">Flex-Grid</p>
+
+        <div class="services-flex services-flex-grid">
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+          <div class="services-flex-item grid-item "></div>
+        </div>
+  
+        <div class="services-buttons">
+          <button class="animation-button animation-play-2 fn-3 font-white bold">play</button>
+          <button class="animation-button animation-pause-2 fn-3 font-white bold">pause</button>
+        </div>  
+
+      </div>
+
+    </section>
+
+    <h3 class="bold-700 fn-9 pointer section-3-title">Services.</h3>
+
+    <section class="section-3">
+
+      <div class="sec-3-sub sec-3-sub-1">
+        <p class="text-center fn-5 bold ">Coding <span class="regular-400">+</span> Design</p>
+      </div>
+
+      <div class="sec-3-sub sec-3-sub-2">
+
+        <p class="fn-5 font-white bold text-center">Code</p>
+
+        <div class="sec-3-anime-1"></div>
+
+        <p class="fn-3 font-white text-center">HTML, CSS and JS are my tools to code any idea</p>
+      </div>
+
+      <div class="sec-3-sub sec-3-sub-3">
+        <p class="fn-5 font-white bold text-center">Web Design</p>
+        <div class="sec-3-anime-2">
+          
+        </div>
+
+        <p class="fn-3 font-white text-center">Sites with calm colors and peaceful experience</p>
+      </div>
+
+      <div class="sec-3-sub sec-3-sub-4">
+        <p class="fn-4 font-white bold text-center">Responsive Design</p>
+      </div>
 
     </section>
 
     <script src="./jquery.js"></script>
-    <script src="./anime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- <script src="./anime.js"></script> -->
     <script src="./app.js"></script>
     
 </body>
