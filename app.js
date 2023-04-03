@@ -50,3 +50,43 @@ $('.about-flex-art-item').on('click', (event) => {
     $(event.currentTarget).siblings($('.about-flex-art-item')).removeClass('rotation')
     $(event.currentTarget).removeClass('scale-80')
 })*/
+
+/* ANIMATION SECTION */
+
+let cube_1 = document.querySelector('.flex-item-1');
+let cube_2 = document.querySelector('.flex-item-2');
+let cube_3 = document.querySelector('.flex-item-3');
+
+const cubeAnimation = anime.timeline({
+    loop: true,
+    autoplay: false,
+    delay: 300,
+    direction: 'alternate',
+})
+
+cubeAnimation.add({
+    targets: cube_1,
+    translateY: [0, -100],
+    duration: 1200,
+    easing: 'easeInOutQuad',
+}).add({
+    targets: cube_2,
+    width: ['10%', '50%'],
+    duration: 2000,
+    rotate: {
+        value: 360,
+        duration: 1000,
+    },
+    easing: 'easeInOutSine',
+}).add({
+    targets: cube_3,
+    translateY: [0, -100],
+    duration: 1200,
+    easing: 'easeInOutQuad'
+})
+
+
+
+document.querySelector('.animation-play').onclick = cubeAnimation.play;
+
+document.querySelector('.animation-pause').onclick = cubeAnimation.pause;

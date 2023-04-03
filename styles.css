@@ -146,6 +146,46 @@ svg {
     transition: clip-path 800ms;
 }
 
+
+.wrapper ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.wrapper ul li {
+    margin: 5rem 0;
+}
+
+.wrapper ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    transition: all 400ms ease 100ms;
+}
+
+.wrapper ul li a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+    transform: scaleY(0);
+    transition: all 400ms ease 100ms;
+    z-index: -1;
+}
+
+.wrapper ul li a:hover:after {
+    transform: scaleY(1);
+} 
+
+.wrapper ul li a:hover {
+    color: #224A54;
+}
+
 .navbar-menu {
     z-index: 2;
     text-align: center;
@@ -173,47 +213,6 @@ svg {
     transform-origin: center;
 }
 
-.wrapper ul {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.wrapper ul li {
-    margin: 5rem 0;
-}
-
-.wrapper ul li a {
-    color: #FFF;
-    text-decoration: none;
-    font-size: 3rem;
-    font-weight: 700;
-    padding: 0.5rem 5rem;
-    position: relative;
-    transition: all 400ms ease 100ms;
-}
-
-.wrapper ul li a:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 5rem;
-    width: 100%;
-    background-color: #FFF;
-    transform: scaleY(0);
-    transition: all 400ms ease 100ms;
-    z-index: -1;
-}
-
-.wrapper ul li a:hover:after {
-    transform: scaleY(1);
-} 
-
-.wrapper ul li a:hover {
-    color: #224A54;
-}
 
 /* NAVBAR */
 
@@ -425,6 +424,7 @@ svg {
     width: 100%;
     height: 100%;
     transition: all 200ms ease-out 100ms;
+    border-radius: 15px;
 }
 
 .about-flex-art-item:hover {
@@ -468,19 +468,51 @@ svg {
 /* SERVICES */
 
 .services {
-    position: relative;
-    margin-top: 8.7rem;
     height: auto;
+    background-color: var(--bg-green-1);
+    padding-bottom: 5rem;
 }
 
 .services-section {
-    background-color: var(--bg-green-1);
     padding-top: 2rem;
 }
 
-.services > h3 {
-    position: absolute;
-    top: -8.5rem;
+.services-title {
+    position: relative;  
+    top: 2.6rem;
+}
+
+.services-flex {
+    width: 100%;
+    height: 35rem;
+    display: flex;
+    gap: 2rem;
+    place-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+}
+
+.services-flex-item {
+    background-color: #FFF;
+    height: 5rem;
+    width: 5rem;
+}
+
+.flex-item-1 {
+    transform: translateY(0px);
+}
+
+.services-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.animation-play, .animation-pause {
+    border: 0.5rem solid #FFF;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out 100ms;
 }
 
 /* MEDIA QUERIES */
@@ -493,6 +525,10 @@ svg {
     .header-developer:hover, .header-designer:hover {
         letter-spacing: 1.5rem;
     }
+
+    .animation-play:hover, .animation-pause:hover {
+        transform: scale(115%);
+    } 
     
 }
 
@@ -553,6 +589,10 @@ svg {
     .header-developer:active, .header-designer:active {
         letter-spacing: 1.5rem;
     }
+
+    .about-title, .services-title {
+        top: 1.3rem;
+    }
     
 }
 
@@ -577,5 +617,9 @@ svg {
     .about-flex-art-container {
         width: 10rem;
         height: 10rem;
+    }
+
+    .about-title, .services-title {
+        top: 1.1rem;
     }
 }
