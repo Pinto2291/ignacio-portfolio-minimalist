@@ -664,6 +664,22 @@ svg {
     height: 70vh;
 }
 
+.sec-3-anime-3 {
+    display: flex;
+    flex-direction: column;
+    column-gap: 5px;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+}
+
+.sec-3-anime-3-square {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    background-color: #FFF;
+    margin: 5px;
+}
+
 /* MEDIA QUERIES */
 
 @media (width >= 769px) {

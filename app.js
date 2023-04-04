@@ -37,7 +37,7 @@ let cubes = document.querySelectorAll('.flex-item');
 const flexAnimation = anime.timeline({
     loop: true,
     autoplay: false,
-    delay: 500,
+    delay: 300,
     direction: 'alternate',
 })
 
@@ -45,27 +45,35 @@ flexAnimation.add({
     targets: cubes,
     translateY: 0,
     borderRadius: "10%",
-    duration: 1100,
+    duration: 1000,
     easing: 'easeInOutQuad',
 }).add({
     targets: cubes,
     translateY: '-100%',
     borderRadius: "20%",
     rotate: 360,
-    duration: 1100,
+    duration: 1000,
     easing: 'easeInOutQuad',
 }).add({
     targets: cubes,
     translateY: '150%',
     borderRadius: "15%",
     rotate: -360,
-    duration: 1100,
+    duration: 1000,
     easing: 'easeInOutQuad',
 })
 
-document.querySelector('.animation-play').onclick = flexAnimation.play;
-document.querySelector('.animation-pause').onclick = flexAnimation.pause;
-
+$('.animation-play').on('click', (event) => {
+    if(!flexAnimation['autoplay']){
+        flexAnimation.play();
+        flexAnimation['autoplay'] = true;
+        $(event.currentTarget).html('pause');
+    } else {
+        flexAnimation.pause();
+        flexAnimation['autoplay'] = false;
+        $(event.currentTarget).html('play');
+    }
+})
 
 let cubes2 = document.querySelectorAll('.grid-item');
 
@@ -90,23 +98,49 @@ gridAnimation.add({
     easing: 'easeInOutQuad',
 })
 
-document.querySelector('.animation-play-2').onclick = gridAnimation.play;
-document.querySelector('.animation-pause-2').onclick = gridAnimation.pause;
+$('.animation-play-2').on('click', (event) => {
+    if(!gridAnimation['autoplay']){
+        gridAnimation.play();
+        gridAnimation['autoplay'] = true;
+        $(event.currentTarget).html('pause');
+    } else {
+        gridAnimation.pause();
+        gridAnimation['autoplay'] = false;
+        $(event.currentTarget).html('play');
+    }
+})
 
 let code_animation = document.querySelector('.sec-3-anime-1');
 
 let code_animation_1 = anime({
     targets: code_animation,
-    
     rotate: [0, 90, 180, 270, 300, 0],
     opacity: [1, 0.5, 0.2],
     borderRadius: ['0%','10%', '20%', '25%'],
-    width: ['50%', '30%', '50%'],
+    width: ['40%', '30%', '40%'],
     duration: 2500,
     easing: 'easeInOutQuad',
     loop: true,
     direction: 'alternate',
     delay: 1500,
+    autoplay: true,
+})
+
+const $codeAnimation = $('.sec-3-anime-1-play').on('click', () => {
+        if(!code_animation_1['autoplay']){
+            code_animation_1.play();
+            code_animation_1['autoplay'] = true;
+            
+        } else {
+            code_animation_1.pause();
+            code_animation_1['autoplay'] = false;
+            
+        }
+})
+
+
+$('#code-section').on('click', (event) => {
+    $(event.currentTarget).siblings().slideToggle(3000);
 })
 
 let containerSquares = document.querySelector('.sec-3-anime-2')
@@ -120,8 +154,7 @@ for (let i = 0; i < ny*nx; i++){
     containerSquares.appendChild(square)
 }
 
-
-anime({
+const squaresAnimation = anime({
     targets: '.square',
     //scale: ['100%', '50%'],
     scale: [
@@ -143,3 +176,105 @@ anime({
     autoplay: true,
     direction: 'alternate',
 });
+
+$('.sec-3-anime-2-play').on('click', () => {
+    if(!squaresAnimation['autoplay']){
+        squaresAnimation.play();
+        squaresAnimation['autoplay'] = true;
+    } else {
+        squaresAnimation.pause();
+        squaresAnimation['autoplay'] = false;
+    }
+})
+
+$('#web-design-section').on('click', (event) => {
+    $(event.currentTarget).siblings().slideToggle(3000)
+})
+
+let sec_3_anime_3_elements = 3;
+
+for(let i = 0; i < sec_3_anime_3_elements; i++){
+    let div = document.createElement('div');
+    let container = document.querySelector('.sec-3-anime-3');
+    div.setAttribute('class', `sec-3-anime-3-square sec-3-anime-3-square-${i}`)
+    container.appendChild(div);
+}
+
+const sec_3_cubes = anime.timeline({
+
+    loop: true,
+    autoplay: true,
+    delay: 200,
+    direction: 'alternate',
+
+}).add({
+
+    targets: '.sec-3-anime-3-square-0',
+    keyframes: [
+        //{translateY: -5},
+        {translateX: -60},
+        {translateY:  60},
+      ],
+      duration: 3000,
+      easing: 'easeOutElastic(1, .8)',
+      delay: 200,
+}).add({
+
+    targets: '.sec-3-anime-3-square-2',
+    keyframes: [
+        //{translateY:  5},
+        {translateX:  60},
+        {translateY: -60},
+      ],
+      duration: 3000,
+      easing: 'easeOutElastic(1, .8)',
+      delay: 200,
+}).add({
+    targets: '.sec-3-anime-3-square-1',
+    keyframes: [
+        {translateY: -60},
+      ],
+      duration: 3000,
+      easing: 'easeOutElastic(1, .8)',
+      delay: 200,
+}).add({
+
+    targets: '.sec-3-anime-3-square-0',
+    keyframes: [
+        {translateX: 0},
+      ],
+    duration: 3000,
+    easing: 'easeOutElastic(1, .8)',
+    delay: 200,
+
+}).add({
+
+    targets: '.sec-3-anime-3-square-2',
+    keyframes: [
+        {translateY: 0},
+        {translateX: 0},
+      ],
+    duration: 3000,
+    easing: 'easeOutElastic(1, .8)',
+    delay: 200,
+
+}).add({
+    targets: '.sec-3-anime-3-square-1',
+    //scaleX: [1, 3.2],
+    width: 160,
+    duration: 1500,
+    easing: 'easeOutElastic(1, .8)',
+    delay: 100,
+}).add({
+    targets: '.sec-3-anime-3-square-0',
+    width: 160,
+    duration: 1500,
+    easing: 'easeOutElastic(1, .8)',
+    delay: 100,
+}).add({
+    targets: '.sec-3-anime-3-square-2',
+    width: 160,
+    duration: 1500,
+    easing: 'easeOutElastic(1, .8)',
+    delay: 100,
+})
