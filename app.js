@@ -37,27 +37,27 @@ let cubes = document.querySelectorAll('.flex-item');
 const flexAnimation = anime.timeline({
     loop: true,
     autoplay: false,
-    delay: 1000,
+    delay: 500,
     direction: 'alternate',
 })
 
 flexAnimation.add({
     targets: cubes,
     translateY: 0,
-    borderRadius: 10,
+    borderRadius: "10%",
     duration: 1100,
     easing: 'easeInOutQuad',
 }).add({
     targets: cubes,
     translateY: '-100%',
-    borderRadius: 20,
+    borderRadius: "20%",
     rotate: 360,
     duration: 1100,
     easing: 'easeInOutQuad',
 }).add({
     targets: cubes,
     translateY: '150%',
-    borderRadius: 10,
+    borderRadius: "15%",
     rotate: -360,
     duration: 1100,
     easing: 'easeInOutQuad',
@@ -97,12 +97,16 @@ let code_animation = document.querySelector('.sec-3-anime-1');
 
 let code_animation_1 = anime({
     targets: code_animation,
-    width: ['50%', '25%'],
-    borderRadius: '100%',
-    duration: 1500,
+    
+    rotate: [0, 90, 180, 270, 300, 0],
+    opacity: [1, 0.5, 0.2],
+    borderRadius: ['0%','10%', '20%', '25%'],
+    width: ['50%', '30%', '50%'],
+    duration: 2500,
     easing: 'easeInOutQuad',
     loop: true,
     direction: 'alternate',
+    delay: 1500,
 })
 
 let containerSquares = document.querySelector('.sec-3-anime-2')
@@ -117,20 +121,24 @@ for (let i = 0; i < ny*nx; i++){
 }
 
 
-
 anime({
     targets: '.square',
     //scale: ['100%', '50%'],
     scale: [
         {value: .1, easing: 'easeOutSine', duration: 600},
+        {value: .5, easing: 'easeOutSine', duration: 800},
         {value: 1, easing: 'easeInOutQuad', duration: 1200}
       ],
     opacity: [
-        {value: 0.3, easing: 'easeOutSine', duration: 300},
-        {value: 0.5, easing: 'easeInOutQuad', duration: 500},
-        {value: 1, easing: 'easeInOutQuad', duration: 500},
+        {value: 0.5, easing: 'easeOutSine', duration: 600}, //300
+        {value: 0.8, easing: 'easeInOutQuad', duration: 800}, //500
+        {value: 1, easing: 'easeInOutQuad', duration: 1200}, //500
     ],
-    delay: anime.stagger(200, {grid: [nx, ny], axis: 'x'}),
+    backgroundColor: [
+        {value: '#C1605C', easing: 'easeOutSine', duration: 1200},
+        {value: '#FFF', easing: 'easeOutSine', duration: 1200},
+    ],
+    delay: anime.stagger(1500, {grid: [nx, ny], from: 'center'}),
     loop: true,
     autoplay: true,
     direction: 'alternate',
