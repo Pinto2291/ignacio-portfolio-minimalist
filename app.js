@@ -278,3 +278,16 @@ const sec_3_cubes = anime.timeline({
     easing: 'easeOutElastic(1, .8)',
     delay: 100,
 })
+
+
+$('.sec-3-anime-3-play').on('click', () => {
+    if(!sec_3_cubes['autoplay']){
+        sec_3_cubes.play();
+        sec_3_cubes['autoplay'] = true;
+        
+    } else {
+        sec_3_cubes.pause();
+        sec_3_cubes['autoplay'] = false;
+        
+    }
+})

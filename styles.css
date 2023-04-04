@@ -144,6 +144,14 @@ svg {
     opacity: 0;
 }
 
+.opacity-50 {
+    transition: all 250ms ease-in-out 50ms;
+}
+
+.opacity-50:hover {
+    opacity: 0.5;
+}
+
 /* MENU */
 
 .wrapper {
