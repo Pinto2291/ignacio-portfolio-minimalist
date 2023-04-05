@@ -6,16 +6,16 @@ anime.timeline({loop: true}).add({
     targets: '.ml6 .letter',
     translateY: ["1.1em", 0],
     translateZ: 0,
-    duration: 2200,// 10000
-    delay: (el, i) => 100 * i
+    duration: 2000,// 10000
+    delay: (el, i) => 300 * i
     
     }).add({
 
     targets: '.ml6',
     opacity: 0,
-    duration: 2000,
+    duration: 1000,
     easing: "easeOutExpo",
-    delay: 1000,
+    delay: 500,
 
 });
 
@@ -37,7 +37,7 @@ let cubes = document.querySelectorAll('.flex-item');
 const flexAnimation = anime.timeline({
     loop: true,
     autoplay: false,
-    delay: 300,
+    delay: 200,
     direction: 'alternate',
 })
 
@@ -49,18 +49,32 @@ flexAnimation.add({
     easing: 'easeInOutQuad',
 }).add({
     targets: cubes,
-    translateY: '-100%',
+    //translateY: '-100%',
+    keyframes: [
+        {translateY:  60},
+        {translateY: 0},
+        {translateY: -60},
+        {translateY: 0},
+      ],
     borderRadius: "20%",
-    rotate: 360,
-    duration: 1000,
+    rotate: 90,
+    duration: 2000,
     easing: 'easeInOutQuad',
+    delay: 100,
 }).add({
     targets: cubes,
-    translateY: '150%',
+    //translateY: '150%',
+    keyframes: [
+        {translateY:  60},
+        {translateY: 0},
+        {translateY: -120},
+        {translateY: 0},
+      ],
     borderRadius: "15%",
-    rotate: -360,
-    duration: 1000,
+    rotate: -90,
+    duration: 2000,
     easing: 'easeInOutQuad',
+    delay: 100,
 })
 
 $('.animation-play').on('click', (event) => {
@@ -76,26 +90,38 @@ $('.animation-play').on('click', (event) => {
 })
 
 let cubes2 = document.querySelectorAll('.grid-item');
+let midleCubes = document.querySelectorAll('.midle-cube')
 
 const gridAnimation = anime.timeline({
     loop: true,
     autoplay: false,
-    delay: 500,
+    delay: 200,
     direction: 'alternate',
 })
 
 gridAnimation.add({
     targets: cubes2,
-    rotate: 360,
-    duration: 1500,
-    borderRadius: 10,
+    keyframes: [
+        {translateX:  50},
+        {translateX:  0},
+        {translateX: -50},
+        {translateX:  0},
+      ],
+    duration: 2000,
+    borderRadius: '10%',
     easing: 'easeInOutQuad',
 }).add({
     targets: cubes2,
-    rotate: -360,
+    rotate: 180,
     duration: 2000,
-    borderRadius: 20,
+    borderRadius: '10%',
     easing: 'easeInOutQuad',
+}).add({
+    targets: midleCubes,
+    scaleX: [1, 2, 2.5, 3],
+    duration: 2000,
+    easing: 'easeInOutQuad',
+    delay: 100,
 })
 
 $('.animation-play-2').on('click', (event) => {
@@ -112,6 +138,7 @@ $('.animation-play-2').on('click', (event) => {
 
 let code_animation = document.querySelector('.sec-3-anime-1');
 
+/*
 let code_animation_1 = anime({
     targets: code_animation,
     rotate: [0, 90, 180, 270, 300, 0],
@@ -124,6 +151,26 @@ let code_animation_1 = anime({
     direction: 'alternate',
     delay: 1500,
     autoplay: true,
+})
+*/
+let code_animation_1 = anime.timeline({
+    targets: code_animation,
+    easing: 'easeInOutQuad',
+    loop: true,
+    direction: 'alternate',
+    delay: 1000,
+    autoplay: true,
+}).add({
+    rotate: [0, 1080],
+    opacity: [1, 0.5, 0.2],
+    borderRadius: ['0%','10%', '20%'],
+    duration: 2500,
+    delay: 100,
+}).add({
+    width: ["10%", "20%", "25%", "30%", '50%'],
+    opacity: [0.5, 0.8, 1],
+    duration: 2000,
+    delay: 200,
 })
 
 const $codeAnimation = $('.sec-3-anime-1-play').on('click', () => {
@@ -158,9 +205,9 @@ const squaresAnimation = anime({
     targets: '.square',
     //scale: ['100%', '50%'],
     scale: [
-        {value: .1, easing: 'easeOutSine', duration: 600},
-        {value: .5, easing: 'easeOutSine', duration: 800},
-        {value: 1, easing: 'easeInOutQuad', duration: 1200}
+        {value: .1, easing: 'easeOutSine', duration: 500}, // 600
+        {value: .5, easing: 'easeOutSine', duration: 500}, // 800
+        {value: 1, easing: 'easeInOutQuad', duration: 800} // 1200
       ],
     opacity: [
         {value: 0.5, easing: 'easeOutSine', duration: 600}, //300
@@ -168,10 +215,10 @@ const squaresAnimation = anime({
         {value: 1, easing: 'easeInOutQuad', duration: 1200}, //500
     ],
     backgroundColor: [
-        {value: '#C1605C', easing: 'easeOutSine', duration: 1200},
-        {value: '#FFF', easing: 'easeOutSine', duration: 1200},
+        {value: '#C1605C', easing: 'easeOutSine', duration: 1000},
+        {value: '#FFF', easing: 'easeOutSine', duration: 1000},
     ],
-    delay: anime.stagger(1500, {grid: [nx, ny], from: 'center'}),
+    delay: anime.stagger(500, {grid: [nx, ny], from: 'center'}), // 1500
     loop: true,
     autoplay: true,
     direction: 'alternate',
@@ -215,9 +262,9 @@ const sec_3_cubes = anime.timeline({
         {translateX: -60},
         {translateY:  60},
       ],
-      duration: 3000,
+      duration: 1000,
       easing: 'easeOutElastic(1, .8)',
-      delay: 200,
+      delay: 100,
 }).add({
 
     targets: '.sec-3-anime-3-square-2',
@@ -226,26 +273,26 @@ const sec_3_cubes = anime.timeline({
         {translateX:  60},
         {translateY: -60},
       ],
-      duration: 3000,
+      duration: 1000,
       easing: 'easeOutElastic(1, .8)',
-      delay: 200,
+      delay: 100,
 }).add({
     targets: '.sec-3-anime-3-square-1',
     keyframes: [
         {translateY: -60},
       ],
-      duration: 3000,
+      duration: 1000,
       easing: 'easeOutElastic(1, .8)',
-      delay: 200,
+      delay: 100,
 }).add({
 
     targets: '.sec-3-anime-3-square-0',
     keyframes: [
         {translateX: 0},
       ],
-    duration: 3000,
+    duration: 1000, //3000
     easing: 'easeOutElastic(1, .8)',
-    delay: 200,
+    delay: 100,
 
 }).add({
 
@@ -254,27 +301,27 @@ const sec_3_cubes = anime.timeline({
         {translateY: 0},
         {translateX: 0},
       ],
-    duration: 3000,
+    duration: 1000,
     easing: 'easeOutElastic(1, .8)',
-    delay: 200,
+    delay: 100,
 
 }).add({
     targets: '.sec-3-anime-3-square-1',
     //scaleX: [1, 3.2],
     width: 160,
-    duration: 1500,
+    duration: 1200,
     easing: 'easeOutElastic(1, .8)',
     delay: 100,
 }).add({
     targets: '.sec-3-anime-3-square-0',
     width: 160,
-    duration: 1500,
+    duration: 1200,
     easing: 'easeOutElastic(1, .8)',
     delay: 100,
 }).add({
     targets: '.sec-3-anime-3-square-2',
     width: 160,
-    duration: 1500,
+    duration: 1200,
     easing: 'easeOutElastic(1, .8)',
     delay: 100,
 })
