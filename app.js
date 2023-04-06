@@ -4,9 +4,9 @@ textWrapper1.innerHTML = textWrapper1.textContent.replace(/\S/g, "<span class='l
 
 anime.timeline({loop: true}).add({
     targets: '.ml6 .letter',
-    translateY: ["1.1em", 0],
+    translateY: ["2.1em", 0],
     translateZ: 0,
-    duration: 2000,// 10000
+    duration: 1000,// 10000
     delay: (el, i) => 300 * i
     
     }).add({
@@ -81,11 +81,11 @@ $('.animation-play').on('click', (event) => {
     if(!flexAnimation['autoplay']){
         flexAnimation.play();
         flexAnimation['autoplay'] = true;
-        $(event.currentTarget).html('pause');
+        $(event.currentTarget).html('&#x23F8');
     } else {
         flexAnimation.pause();
         flexAnimation['autoplay'] = false;
-        $(event.currentTarget).html('play');
+        $(event.currentTarget).html('&#x23F5');
     }
 })
 
@@ -128,11 +128,11 @@ $('.animation-play-2').on('click', (event) => {
     if(!gridAnimation['autoplay']){
         gridAnimation.play();
         gridAnimation['autoplay'] = true;
-        $(event.currentTarget).html('pause');
+        $(event.currentTarget).html('&#x23F8');
     } else {
         gridAnimation.pause();
         gridAnimation['autoplay'] = false;
-        $(event.currentTarget).html('play');
+        $(event.currentTarget).html('&#x23F5');
     }
 })
 
@@ -338,3 +338,66 @@ $('.sec-3-anime-3-play').on('click', () => {
         
     }
 })
+
+
+// HEADER and DESIGNER titles
+
+/*
+for (let i = 0; i < ny*nx; i++){
+    let square = document.createElement('div');
+    square.setAttribute('class', 'square');
+    containerSquares.appendChild(square)
+}
+
+*/
+
+let textDeveloper = 'developer';
+let textContainer = document.querySelector('.header-developer');
+
+for(let i = 0; i < textDeveloper.split('').length; i++){
+    let letter = document.createElement('span');
+    letter.setAttribute('class', 'font-white uppercase title-section-font bold-700 header-developer-title el');
+    letter.textContent = textDeveloper[i];
+    textContainer.appendChild(letter);
+}
+
+
+
+anime({
+    targets: '.header-developer-title',
+    opacity: [1, 0.8, 0.6, 1],
+    rotateX: [0, 180],
+    rotateY: [0, 180],
+    translateX: 50,
+    color: ['#FFF', '#250f18'],
+    easing: 'easeOutElastic(1, .5)',
+    //translateX: 50,
+    duration: 2500,
+    delay: anime.stagger(200, {start: 500}),
+    autoplay: true,
+    loop: true,
+    direction: 'alternate',
+})
+
+/* This function takes a string, a DOM element to create, one or multiple classes and a parent by query selector */
+
+function spanLetter({string, domElement, className, parent, parentClass}) {
+    let stringElement = string.split('');
+    let parentElement = document.querySelector(parent)
+    parentElement.setAttribute('class', parentClass);
+    for(let i = 0; i < stringElement.length; i++){
+      let letter = document.createElement(domElement);
+      letter.setAttribute('class', className);
+      letter.textContent = stringElement[i];
+      parentElement.appendChild(letter);
+    }
+}
+
+/*
+spanLetter({
+    string: 'I created this custom function',
+    domElement: 'span',
+    className: 'title-section-font uppercase bold',
+    parent: '.sec-3-sub-1',
+    //parentClass: 'flex',
+})*/

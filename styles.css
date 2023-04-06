@@ -310,10 +310,9 @@ svg {
 
 .header {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    align-items: center;
-    justify-items: center;
     height: 70vh; /* EXPERIMENTAL */
 }
 
@@ -326,24 +325,25 @@ svg {
     background-color: var(--bg-green-1);
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     padding: 4rem 0;
 }
 
 .header-developer, .header-designer {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     transition: all 350ms ease-in-out 150ms;
 }
+
 
 .header-developer {
     background-color: var(--bg-red-1);
     padding: 4rem 0;
+    display: flex;
+    justify-content: center;
 }
 
 .header-designer {
@@ -443,6 +443,9 @@ svg {
     height: 100%;
     gap: 0.5rem;
     justify-content: center;
+    border: 0.5rem solid #FFF;
+    padding: 1rem;
+    border-radius: 5%;
 }
 
 .about-flex-art-item {
@@ -574,8 +577,10 @@ svg {
 }
 
 .animation-button {
-    padding: 1rem;
+    padding: 1.2rem;
     cursor: pointer;
+    border-radius: 10%;
+    border: 0.5rem solid #FFF;
     transition: all 300ms ease-in-out 100ms;
 }
 
@@ -695,10 +700,6 @@ svg {
         letter-spacing: 1.2rem;
     }
 
-    .header-developer:hover, .header-designer:hover {
-        letter-spacing: 1.5rem;
-    }
-
     .animation-button:hover {
         transform: scale(115%);
     } 
@@ -753,14 +754,6 @@ svg {
     .about-flex-art-container {
         width: 15rem;
         height: 15rem;
-    }
-
-    .about-title:active, .services-title:active {
-        letter-spacing: 1.2rem;
-    }
-
-    .header-developer:active, .header-designer:active {
-        letter-spacing: 1.5rem;
     }
 
     .about-title, .services-title, .section-3-title  {
@@ -841,3 +834,4 @@ svg {
         height: 2rem;
     }
 }
+
