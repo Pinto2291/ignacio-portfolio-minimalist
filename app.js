@@ -1,23 +1,107 @@
+/* MAIN FUNCTIONS */
+
+/* This function takes a string, a DOM element to create, one or multiple classes and a parent by query selector */
+
+function spanLetter({string, domElement, className, parent, parentClass}) {
+    let stringElement = string.split('');
+    let parentElement = document.querySelector(parent)
+    parentElement.setAttribute('class', parentClass);
+    for(let i = 0; i < stringElement.length; i++){
+      let letter = document.createElement(domElement);
+      letter.setAttribute('class', className);
+      if(stringElement[i] == ' ') {
+        letter.innerHTML = '&nbsp';
+        parentElement.appendChild(letter);
+      }else {
+        letter.textContent = stringElement[i];
+        parentElement.appendChild(letter);
+      }
+    }
+}
+
+/* DEVELOPER title */
+
+spanLetter({
+    string: 'developer',
+    domElement: 'span',
+    className: 'font-white uppercase title-section-font bold-700 header-developer-title',
+    parent: '.header-developer',
+    parentClass: 'header-developer',
+})
+
+anime({
+    targets: '.header-developer-title',
+    opacity: [1, 0.8, 0.6, 1],
+    rotateX: [0, 180],
+    rotateY: [0, 180],
+    //translateX: 50,
+    color: ['#FFF', '#250f18'],
+    easing: 'easeOutElastic(5, .3)',
+    //translateX: 50,
+    duration: 2500,
+    delay: anime.stagger(200, {start: 500}),
+    autoplay: true,
+    loop: true,
+    direction: 'alternate',
+})
+
+/* TITLE  */
+
+spanLetter({
+    string: "Hi, I'm Ignacio",
+    domElement: 'span',
+    className: 'letters letter font-white bold-700 title-section-font',
+    parent: '.text-wrapper',
+    parentClass: 'text-wrapper',
+})
+
 // Wrap every letter in a span
-let textWrapper1 = document.querySelector('.ml6 .letters');
-textWrapper1.innerHTML = textWrapper1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: true}).add({
-    targets: '.ml6 .letter',
-    translateY: ["2.1em", 0],
+    targets: '.letter', //ml6
+    translateY: ["15rem", 0],
+    opacity: [0, 1],
     translateZ: 0,
     duration: 1000,// 10000
-    delay: (el, i) => 300 * i
+    delay: (el, i) => 150 * i //el
+    //delay: anime.stagger(250, {start: 500}),
     
     }).add({
-
-    targets: '.ml6',
+    targets: '.header-text',
     opacity: 0,
     duration: 1000,
     easing: "easeOutExpo",
     delay: 500,
-
 });
+
+/* DESIGNER title */
+
+spanLetter({
+    string: 'designer',
+    domElement: 'span',
+    className: 'uppercase title-section-font bold-700 header-designer-letter relative inline-block',
+    parent: '.header-designer-title',
+    parentClass: 'header-designer-title relative',
+})
+
+anime.timeline({loop: true}).add({
+    targets: '.header-designer-letter', //ml6
+    translateY: ["-15rem", 0],
+    opacity: [0, 1],
+    translateZ: 0,
+    duration: 1000,// 10000
+    easing: 'easeOutElastic(2, .3)', //easeOutElastic
+    delay: (el, i) => 120 * i //el
+    
+    }).add({
+    targets: '.header-designer-title',
+    opacity: 0,
+    duration: 1200,
+    easing: "easeOutExpo",
+    delay: 500,
+});
+
+/* OVERLAY MENU */
 
 $('#menuButton').on('click', () => {
     $('.wrapper').toggleClass('custom');
@@ -263,7 +347,7 @@ const sec_3_cubes = anime.timeline({
         {translateY:  60},
       ],
       duration: 1000,
-      easing: 'easeOutElastic(1, .8)',
+      easing: 'easeOutElastic(3, .5)',
       delay: 100,
 }).add({
 
@@ -274,7 +358,7 @@ const sec_3_cubes = anime.timeline({
         {translateY: -60},
       ],
       duration: 1000,
-      easing: 'easeOutElastic(1, .8)',
+      easing: 'easeOutElastic(3, .5)',
       delay: 100,
 }).add({
     targets: '.sec-3-anime-3-square-1',
@@ -282,7 +366,7 @@ const sec_3_cubes = anime.timeline({
         {translateY: -60},
       ],
       duration: 1000,
-      easing: 'easeOutElastic(1, .8)',
+      easing: 'easeOutElastic(3, .5)',
       delay: 100,
 }).add({
 
@@ -309,20 +393,20 @@ const sec_3_cubes = anime.timeline({
     targets: '.sec-3-anime-3-square-1',
     //scaleX: [1, 3.2],
     width: 160,
-    duration: 1200,
-    easing: 'easeOutElastic(1, .8)',
+    duration: 1500,
+    easing: 'easeOutElastic(5, .3)', // 'easeOutElastic(1, .8)'
     delay: 100,
 }).add({
     targets: '.sec-3-anime-3-square-0',
     width: 160,
-    duration: 1200,
-    easing: 'easeOutElastic(1, .8)',
+    duration: 1500,
+    easing: 'easeOutElastic(3, .3)',
     delay: 100,
 }).add({
     targets: '.sec-3-anime-3-square-2',
     width: 160,
-    duration: 1200,
-    easing: 'easeOutElastic(1, .8)',
+    duration: 1500,
+    easing: 'easeOutElastic(4, .3)',
     delay: 100,
 })
 
@@ -338,66 +422,3 @@ $('.sec-3-anime-3-play').on('click', () => {
         
     }
 })
-
-
-// HEADER and DESIGNER titles
-
-/*
-for (let i = 0; i < ny*nx; i++){
-    let square = document.createElement('div');
-    square.setAttribute('class', 'square');
-    containerSquares.appendChild(square)
-}
-
-*/
-
-let textDeveloper = 'developer';
-let textContainer = document.querySelector('.header-developer');
-
-for(let i = 0; i < textDeveloper.split('').length; i++){
-    let letter = document.createElement('span');
-    letter.setAttribute('class', 'font-white uppercase title-section-font bold-700 header-developer-title el');
-    letter.textContent = textDeveloper[i];
-    textContainer.appendChild(letter);
-}
-
-
-
-anime({
-    targets: '.header-developer-title',
-    opacity: [1, 0.8, 0.6, 1],
-    rotateX: [0, 180],
-    rotateY: [0, 180],
-    translateX: 50,
-    color: ['#FFF', '#250f18'],
-    easing: 'easeOutElastic(1, .5)',
-    //translateX: 50,
-    duration: 2500,
-    delay: anime.stagger(200, {start: 500}),
-    autoplay: true,
-    loop: true,
-    direction: 'alternate',
-})
-
-/* This function takes a string, a DOM element to create, one or multiple classes and a parent by query selector */
-
-function spanLetter({string, domElement, className, parent, parentClass}) {
-    let stringElement = string.split('');
-    let parentElement = document.querySelector(parent)
-    parentElement.setAttribute('class', parentClass);
-    for(let i = 0; i < stringElement.length; i++){
-      let letter = document.createElement(domElement);
-      letter.setAttribute('class', className);
-      letter.textContent = stringElement[i];
-      parentElement.appendChild(letter);
-    }
-}
-
-/*
-spanLetter({
-    string: 'I created this custom function',
-    domElement: 'span',
-    className: 'title-section-font uppercase bold',
-    parent: '.sec-3-sub-1',
-    //parentClass: 'flex',
-})*/
