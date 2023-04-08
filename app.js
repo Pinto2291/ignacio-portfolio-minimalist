@@ -139,12 +139,18 @@ const aboutSectionCubesAnimation = anime.timeline({
     direction: 'alternate',
     delay: 500,
 }).add({
+    targets: '.about-flex-art-container',
+    width: ['10%', '50%'],
+    height: ['10%', '40%'],
+    duration: 2000,
+    easing: 'easeInElastic(3, .5)',
+}).add({
     targets: '.about-flex-art-item-0',
     keyframes: [
         {translateY: '-300%'},
         {translateY: '-350%'},
     ],
-    duration: 1500,
+    duration: 500,
     easing: 'easeOutElastic(2, .3)',
     delay: 200,
 }).add({
