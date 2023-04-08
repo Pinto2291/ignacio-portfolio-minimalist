@@ -413,12 +413,11 @@ svg {
     justify-content: center;
     align-items: center;
     width: clamp(12rem, 40%, 25rem);
-    height: clamp(10rem, 40%, 25rem);
-    /*
-    width: 30rem;
-    height: 30rem;
-    */
+    height: clamp(12rem, 40%, 25rem);
     margin: auto;
+    border: 0.5rem solid #FFF;
+    border-radius: 5%;
+    position: relative;
 }
 
 .rotate {
@@ -442,7 +441,7 @@ svg {
       transform: rotate(359deg);
     }
 }
-
+/*
 .about-flex-art {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -456,17 +455,15 @@ svg {
     padding: 1rem;
     border-radius: 5%;
 }
-
+*/
 .about-flex-art-item {
     cursor: pointer;
-    width: 100%;
-    height: 100%;
-    transition: all 200ms ease-out 100ms;
+    width: 10%;
+    height: 10%;
+   /* transition: all 200ms ease-out 100ms;*/
     border-radius: 5%;
-}
-
-.about-flex-art-item:hover {
-    scale: 110%;
+    background-color: #FFF;
+    position: absolute;
 }
 
 .flex-art1 {

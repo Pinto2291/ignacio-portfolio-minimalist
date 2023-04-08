@@ -1,5 +1,16 @@
 /* MAIN FUNCTIONS */
 
+/* FUNCTION to create multiple cubes inside a parent container */
+
+function createCubes({nCubes, domElement, domClass, parent}) {
+    let container = document.querySelector(`.${parent}`);
+    for(let i = 0; i < nCubes; i++){
+        let cubeElement = document.createElement(domElement);
+        cubeElement.setAttribute('class', `${domClass} ${domClass}-${i}`);
+        container.appendChild(cubeElement);
+    }
+}
+
 /* This function takes a string, a DOM element to create, one or multiple classes and a parent by query selector */
 
 function spanLetter({string, domElement, className, parent, parentClass}) {
@@ -21,7 +32,7 @@ function spanLetter({string, domElement, className, parent, parentClass}) {
 
 /* DEVELOPER title */
 
-spanLetter({
+const developer_title = spanLetter({
     string: 'developer',
     domElement: 'span',
     className: 'font-white uppercase title-section-font bold-700 header-developer-title',
@@ -47,7 +58,7 @@ anime({
 
 /* TITLE  */
 
-spanLetter({
+const main_title = spanLetter({
     string: "Hi, I'm Ignacio",
     domElement: 'span',
     className: 'letters letter font-white bold-700 title-section-font',
@@ -76,7 +87,7 @@ anime.timeline({loop: true}).add({
 
 /* DESIGNER title */
 
-spanLetter({
+const designer_title = spanLetter({
     string: 'designer',
     domElement: 'span',
     className: 'uppercase title-section-font bold-700 header-designer-letter relative inline-block',
@@ -113,6 +124,95 @@ $('.about-flex-art-item').on('click', (event) => {
     $(event.currentTarget).toggleClass('scale-80')
 })
 
+/* CUBES for About section */
+
+let aboutSectionCubes = createCubes({
+    nCubes: 6,
+    domElement: 'div',
+    domClass: 'about-flex-art-item',
+    parent: 'about-flex-art-container',
+})
+
+const aboutSectionCubesAnimation = anime.timeline({
+    loop: true,
+    autoplay: true,
+    direction: 'alternate',
+    delay: 500,
+}).add({
+    targets: '.about-flex-art-item-0',
+    keyframes: [
+        {translateY: '-300%'},
+        {translateY: '-350%'},
+    ],
+    duration: 1500,
+    easing: 'easeOutElastic(2, .3)',
+    delay: 200,
+}).add({
+    targets: '.about-flex-art-item-0',
+    width: '80%',
+    duration: 1000,
+    opacity: [0.25, 0.5, 1],
+    easing: 'easeOutElastic(5, .3)',
+    delay: 200,
+}).add({
+    targets: '.about-flex-art-item-1',
+    keyframes: [
+        {translateX: '-350%'},
+        {translateY: '10%'}
+    ],
+    height: '70%',
+    opacity: [0.25, 0.5, 1],
+    duration: 1000,
+    easing: 'easeOutElastic(2, .3)',
+    delay: 250,
+}).add({
+    targets: '.about-flex-art-item-2',
+    keyframes: [
+        {translateY: '360%'},
+        {translateX: '10%'}
+    ],
+    width: '65%',
+    duration: 800,
+    opacity: [0.25, 0.5, 1],
+    easing: 'easeOutElastic(1, .2)',
+    delay: 200,
+}).add({
+    targets: '.about-flex-art-item-3',
+    keyframes: [
+        {translateY: '55%'},
+        {translateX: '10%'}
+    ],
+    width: '65%',
+    height: '25%',
+    duration: 800,
+    opacity: [0.25, 0.5, 1],
+    easing: 'easeOutElastic(1, .2)',
+    delay: 200,
+}).add({
+    targets: '.about-flex-art-item-4',
+    keyframes: [
+        {translateY: '-55%'},
+        {translateX: '80%'}
+    ],
+    height: '25%',
+    width: '30%',
+    duration: 800,
+    opacity: [0, 0.5, 1],
+    easing: 'easeOutElastic(5, .5)',
+    delay: 200,
+}).add({
+    targets: '.about-flex-art-item-5',
+    keyframes: [
+        {translateY: '-55%'},
+        {translateX: '-35%'}
+    ],
+    height: '25%',
+    width: '30%',
+    duration: 1000,
+    opacity: [0, 0.5, 1],
+    easing: 'easeOutElastic(5, .5)',
+    delay: 800,
+})
 
 /* ANIMATION SECTION */
 
@@ -422,3 +522,4 @@ $('.sec-3-anime-3-play').on('click', () => {
         
     }
 })
+
