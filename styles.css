@@ -727,6 +727,27 @@ svg {
     justify-content: space-around;
 }
 
+/* SECTION 5 */
+
+.section-5-title {
+    position: relative;
+    top: 2.6rem;
+    width: 95%;
+    margin: auto;
+}
+
+.section-5 {
+    height: auto;
+    width: 95%;
+    margin: auto;
+}
+
+.section-5-name {
+    background-color: var(--bg-green-1);
+    height: 70vh;
+}
+
+
 /* MEDIA QUERIES */
 
 @media (width >= 769px) {
@@ -790,7 +811,7 @@ svg {
         height: 15rem;
     }
 
-    .about-title, .services-title, .section-3-title, .section-4-title  {
+    .about-title, .services-title, .section-3-title, .section-4-title, .section-5-title  {
         top: 1.3rem;
     }
 

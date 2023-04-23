@@ -271,11 +271,11 @@ $('.animation-play').on('click', (event) => {
     if(!flexAnimation['autoplay']){
         flexAnimation.play();
         flexAnimation['autoplay'] = true;
-        $(event.currentTarget).html('&#x23F8');
+        $(event.currentTarget).html('pause');
     } else {
         flexAnimation.pause();
         flexAnimation['autoplay'] = false;
-        $(event.currentTarget).html('&#x23F5');
+        $(event.currentTarget).html('play');
     }
 })
 
@@ -318,11 +318,11 @@ $('.animation-play-2').on('click', (event) => {
     if(!gridAnimation['autoplay']){
         gridAnimation.play();
         gridAnimation['autoplay'] = true;
-        $(event.currentTarget).html('&#x23F8');
+        $(event.currentTarget).html('pause');
     } else {
         gridAnimation.pause();
         gridAnimation['autoplay'] = false;
-        $(event.currentTarget).html('&#x23F5');
+        $(event.currentTarget).html('play');
     }
 })
 
