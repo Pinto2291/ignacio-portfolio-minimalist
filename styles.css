@@ -6,6 +6,7 @@
     --bg-black-2: #2B2F3C;
     --bg-purple-1: #8E5EA2;
     --bg-peach-light: #E9C3B8;
+    --font-green-2: #2c798f;
 }
 
 html {
@@ -130,6 +131,10 @@ svg {
 
 .font-green-1 {
     color: var(--bg-green-1);
+}
+
+.font-green-2 {
+    color: var(--font-green-2);
 }
 
 .font-red-1 {
@@ -699,6 +704,29 @@ svg {
     margin: 5px;
 }
 
+/* Section 4 Portfolio */
+
+.section-4-title {
+    position: relative;
+    top: 2.6rem;
+    width: 95%;
+    margin: auto;
+}
+
+.section-4 {
+    height: auto;
+    width: 95%;
+    margin: auto;
+}
+
+.section-4-name {
+    background-color: var(--bg-peach-light);
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 /* MEDIA QUERIES */
 
 @media (width >= 769px) {
@@ -762,7 +790,7 @@ svg {
         height: 15rem;
     }
 
-    .about-title, .services-title, .section-3-title  {
+    .about-title, .services-title, .section-3-title, .section-4-title  {
         top: 1.3rem;
     }
 
