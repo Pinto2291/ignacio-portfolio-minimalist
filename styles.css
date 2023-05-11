@@ -117,6 +117,10 @@ svg {
     font-size: clamp(2rem, 2.8vw, 3.5rem);
 }
 
+.name-section-font {
+    font-size: clamp(1.6rem, 2.2vw, 3rem);
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -155,6 +159,33 @@ svg {
 
 .opacity-50:hover {
     opacity: 0.5;
+}
+
+.display-none {
+    display: none;
+}
+
+/*SLIDER BUTTONS and SLIDER */
+
+.buttons-slider {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.slide-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.slide > p {
+    font-size: clamp(2rem, 2.9vw, 3.8rem);
+}
+
+.prev-button, .next-button {
+    font-size: 10rem;
+    cursor: pointer;
 }
 
 /* MENU */
@@ -745,6 +776,29 @@ svg {
 .section-5-name {
     background-color: var(--bg-green-1);
     height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* SECTION 6 */
+
+.section-6-title {
+    position: relative;
+    top: 2.6rem;
+    width: 95%;
+    margin: auto;
+}
+
+.section-6 {
+    height: auto;
+    width: 95%;
+    margin: auto;
+}
+
+.section-6-name {
+    background-color: var(--bg-black-2);
+    height: 70vh;
 }
 
 
@@ -811,7 +865,7 @@ svg {
         height: 15rem;
     }
 
-    .about-title, .services-title, .section-3-title, .section-4-title, .section-5-title  {
+    .about-title, .services-title, .section-3-title, .section-4-title, .section-5-title, .section-6-title  {
         top: 1.3rem;
     }
 

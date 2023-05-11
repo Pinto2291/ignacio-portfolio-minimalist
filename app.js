@@ -529,3 +529,35 @@ $('.sec-3-anime-3-play').on('click', () => {
     }
 })
 
+/* SLIDER */
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    let numberDisplay = document.querySelector(".number-display");
+
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+        //slides[i].style.display = 'none';
+        slides[i].classList.add('display-none');
+        slides[i].classList.remove('slide-flex');
+    }
+
+    //slides[slideIndex - 1].style.display = 'block';
+    slides[slideIndex - 1].classList.remove('display-none');
+    slides[slideIndex - 1].classList.add('slide-flex');
+    numberDisplay.innerHTML = slideIndex + " / " + slides.length;
+}
