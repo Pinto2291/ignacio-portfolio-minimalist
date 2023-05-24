@@ -50,7 +50,7 @@ anime({
     easing: 'easeOutElastic(5, .3)',
     //translateX: 50,
     duration: 2500,
-    delay: anime.stagger(200, {start: 500}),
+    delay: anime.stagger(500, {start: 500}),
     autoplay: true,
     loop: true,
     direction: 'alternate',
@@ -80,9 +80,9 @@ anime.timeline({loop: true}).add({
     }).add({
     targets: '.header-text',
     opacity: 0,
-    duration: 1000,
+    duration: 2500,
     easing: "easeOutExpo",
-    delay: 500,
+    delay: 1500,
 });
 
 /* DESIGNER title */
@@ -107,9 +107,9 @@ anime.timeline({loop: true}).add({
     }).add({
     targets: '.header-designer-title',
     opacity: 0,
-    duration: 1200,
+    duration: 2500,
     easing: "easeOutExpo",
-    delay: 500,
+    delay: 1500,
 });
 
 /* OVERLAY MENU */

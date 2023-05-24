@@ -165,6 +165,18 @@ svg {
     display: none;
 }
 
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
 /*SLIDER BUTTONS and SLIDER */
 
 .buttons-slider {
@@ -201,7 +213,6 @@ svg {
     clip-path: circle(0px at calc(100% - 45px) 45px);
     transition: clip-path 800ms;
 }
-
 
 .wrapper ul {
     position: absolute;
@@ -781,6 +792,94 @@ svg {
     justify-content: space-around;
 }
 
+/*SECTION tools */
+
+.section-tools-title {
+    position: relative;
+    top: 2.6rem;
+    width: 95%;
+    margin: auto;
+}
+
+.section-tools {
+    height: auto;
+    width: 95%;
+    margin: auto;
+}
+
+.section-tools-name {
+    background-color: var(--bg-green-1);
+    /*height: 70vh;*/
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* CARDS */
+
+.gallery {
+    display: flex;
+    left: calc(50% - 330px);
+    margin-top: 1.5rem;
+    justify-content: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.card {
+    position: relative;
+    left: 0px;
+    width: 210px;
+    height: 220px;
+    padding: 0.8rem;
+    background-color: white;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out 0.25s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 25px;
+    display: grid;
+    grid-template-rows: 30% 70%;
+    gap: 2rem;
+}
+
+.cards-title {
+    font-size: clamp(2.1rem, 2.9vw, 3.2rem);
+}
+
+.card-font {
+    font-size: clamp(2rem, 1.5vw, 2.8rem);
+}
+
+.card-description {
+    font-size: clamp(1.5rem, 1.2vw, 2rem);
+}
+
+.card:nth-child(1) {
+    background-color: var(--bg-red-1);
+}
+.card:nth-child(2) {
+    background-color: var(--bg-peach-light)
+}
+.card:nth-child(3) {
+    background-color: var(--bg-grey-1);
+}
+.card:nth-child(4) {
+    background-color: #ED6A5E;
+}
+
+.card:not(:first-child) {
+    margin-left: -55px;
+}
+.card:hover {
+    transform: translateY(-18px);
+    font-weight: 900;
+    cursor: pointer;
+}
+.card:hover ~ .card {
+    left: 55px;
+}
+
+
 /* SECTION 6 */
 
 .section-6-title {
@@ -800,6 +899,8 @@ svg {
     background-color: var(--bg-black-2);
     height: 70vh;
 }
+
+
 
 
 /* MEDIA QUERIES */
@@ -865,7 +966,7 @@ svg {
         height: 15rem;
     }
 
-    .about-title, .services-title, .section-3-title, .section-4-title, .section-5-title, .section-6-title  {
+    .about-title, .services-title, .section-3-title, .section-4-title, .section-5-title, .section-6-title, .section-tools-title  {
         top: 1.3rem;
     }
 
