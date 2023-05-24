@@ -870,15 +870,6 @@ svg {
 .card:not(:first-child) {
     margin-left: -55px;
 }
-.card:hover {
-    transform: translateY(-18px);
-    font-weight: 900;
-    cursor: pointer;
-}
-.card:hover ~ .card {
-    left: 55px;
-}
-
 
 /* SECTION 6 */
 
@@ -912,7 +903,16 @@ svg {
 
     .animation-button:hover {
         transform: scale(115%);
-    } 
+    }
+    
+    .card:hover {
+        transform: translateY(-18px);
+        font-weight: 900;
+        cursor: pointer;
+    }
+    .card:hover ~ .card {
+        left: 55px;
+    }
     
 }
 
@@ -999,6 +999,15 @@ svg {
     }
     .sec-3-sub-1 {
         grid-column: 1 / 4;
+    }
+
+    .card:active {
+        transform: translateY(-18px);
+        font-weight: 900;
+        cursor: pointer;
+    }
+    .card:active ~ .card {
+        left: 55px;
     }
 
 }
