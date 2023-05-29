@@ -525,7 +525,6 @@ $('.sec-3-anime-3-play').on('click', () => {
     } else {
         sec_3_cubes.pause();
         sec_3_cubes['autoplay'] = false;
-        
     }
 })
 
@@ -541,6 +540,7 @@ showSlides(slideIndex);
 function showSlides(n) {
     let slides = document.getElementsByClassName("slide");
     let numberDisplay = document.querySelector(".number-display");
+    console.log(slides)
 
     if (n > slides.length) {
         slideIndex = 1;
