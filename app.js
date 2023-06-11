@@ -534,6 +534,45 @@ $('.sec-3-anime-3-play').on('click', () => {
     }
 })
 
+/*CARD SLIDER */
+let cardIndex = 1;
+showCards(cardIndex);
+
+    function plusCards(n) {
+        showCards(cardIndex += n)
+    }
+
+    function showCards(n) {
+        let cards = document.getElementsByClassName('card-projects')
+
+    if (n > cards.length) {
+        cardIndex = 1;
+    }
+
+    if (n < 1) {
+        cardIndex = cards.length;
+    }
+    
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.add('display-none');
+        cards[i].classList.remove('card-flex');
+    }
+    
+    cards[cardIndex - 1].classList.remove('display-none');
+    cards[cardIndex - 1].classList.add('card-flex');
+}
+
+let nextArrow = document.querySelector('.next-arrow');
+let prevArrow = document.querySelector('.prev-arrow');
+
+nextArrow.addEventListener('click', () => {
+    plusCards(1)
+})
+
+prevArrow.addEventListener('click', () => {
+    plusCards(-1)
+})
+
 /* SLIDER */
 
 let slideIndex = 1;

@@ -732,10 +732,48 @@ svg {
 
 .section-4-name {
     background-color: var(--bg-peach-light);
-    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding: 2rem;
+    gap: 4rem;
+}
+
+.card-projects {
+    background-color: #FFF;
+    border-radius: 10px;
+    width: clamp(150px, 40%, 225px);
+    margin: auto;
+    height: 250px;
+    padding: 2rem;
+    box-shadow: -6px 8px 12px 4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -6px 8px 12px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -6px 8px 12px 4px rgba(0,0,0,0.75);
+}
+
+.card-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.card-arrow {
+    color: #FFF;
+    background-color: var(--bg-black-2);
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 200ms ease-in 50ms;
+    box-shadow: -3px 5px 20px 2px rgba(0,0,0,0.75);
+-webkit-box-shadow: -3px 5px 20px 2px rgba(0,0,0,0.75);
+-moz-box-shadow: -3px 5px 20px 2px rgba(0,0,0,0.75);
+}
+
+.card-arrow:hover {
+    transform: scale(1.2);
 }
 
 /* SECTION 5 */
@@ -987,6 +1025,19 @@ svg {
         width: 700px;
     }
 
+    .card-projects-container {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: 25% 50% 25%;
+        place-content: center;
+    }
+
+    .card-arrow {
+        font-size: 5rem;
+        padding: 2rem;
+    }
+
 }
 
 /*FOOTER*/
@@ -1094,6 +1145,18 @@ svg {
         width: 450px;
     }
 
+    .card-projects-container {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: 15% 60% 15%;
+        place-content: center;
+    }
+
+    .card-arrow {
+        font-size: 2rem;
+        padding: 1rem;
+    }
 
 }
 
