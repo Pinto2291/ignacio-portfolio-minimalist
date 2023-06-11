@@ -177,6 +177,17 @@ svg {
     margin-top: 3rem;
 }
 
+/* TITLES */
+
+.section-title {
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+
+
 /* MENU */
 
 .wrapper {
@@ -410,13 +421,6 @@ svg {
 
 /* ABOUT */
 
-.about-title {
-    position: relative;
-    top: 2.6rem;
-    width: 95%;
-    margin: auto;
-}
-
 .about {
     background-color: var(--bg-black-2);
     height: 80vh; /* EXPERIMENTAL height */
@@ -551,13 +555,6 @@ svg {
     height: 100%;
 }
 
-.services-title {
-    position: relative;  
-    top: 2.6rem;
-    width: 95%;
-    margin: auto;
-}
-
 .services-section, .services-1, .services-2 {
     height: clamp(250px, 70vh, 600px);
     padding: 5rem;
@@ -624,13 +621,6 @@ svg {
 }
 
 /* SECTION-3 */
-
-.section-3-title {
-    position: relative;
-    top: 2.6rem;
-    width: 95%;
-    margin: auto;
-}
 
 .section-3 {
     height: auto;
@@ -734,13 +724,6 @@ svg {
 
 /* Section 4 Portfolio */
 
-.section-4-title {
-    position: relative;
-    top: 2.6rem;
-    width: 95%;
-    margin: auto;
-}
-
 .section-4 {
     height: auto;
     width: 95%;
@@ -756,13 +739,6 @@ svg {
 }
 
 /* SECTION 5 */
-
-.section-5-title {
-    position: relative;
-    top: 2.6rem;
-    width: 95%;
-    margin: auto;
-}
 
 .section-5 {
     height: auto;
@@ -858,13 +834,6 @@ svg {
 
 /*SECTION tools */
 
-.section-tools-title {
-    position: relative;
-    top: 2.6rem;
-    width: 95%;
-    margin: auto;
-}
-
 .section-tools {
     height: auto;
     width: 95%;
@@ -936,13 +905,6 @@ svg {
 }
 
 /* SECTION 6 */
-
-.section-6-title {
-    position: relative;
-    top: 2.6rem;
-    width: 95%;
-    margin: auto;
-}
 
 .section-6 {
     height: auto;
@@ -1088,10 +1050,6 @@ svg {
         height: 15rem;
     }
 
-    .about-title, .services-title, .section-3-title, .section-4-title, .section-5-title, .section-6-title, .section-tools-title  {
-        top: 1.3rem;
-    }
-
     .services {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
@@ -1160,10 +1118,6 @@ svg {
     .about-flex-art-container {
         width: 10rem;
         height: 10rem;
-    }
-
-    .about-title, .services-title, .section-3-title  {
-        top: 1.1rem;
     }
 
     .about-flex-art-container {
