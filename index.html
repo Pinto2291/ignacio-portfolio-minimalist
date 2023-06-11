@@ -14,17 +14,18 @@
 
     <div class="wrapper">
       <ul class="menu fn-5">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Tools</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="menu-element" href="#home">Home</a></li>
+        <li><a class="menu-element" href="#about">About</a></li>
+        <li><a class="menu-element" href="#design">Design</a></li>
+        <li><a class="menu-element" href="#services">Services</a></li>
+        <li><a class="menu-element" href="#portfolio">Portfolio</a></li>
+        <li><a class="menu-element" href="#certificates">Certificates</a></li>
+        <li><a class="menu-element" href="#tools">Tools</a></li>
+        <li><a class="menu-element" href="#contact">Contact</a></li>
       </ul>
     </div>
 
-    <nav class="navbar">
+    <nav id="home" class="navbar">
 
       <button id="menuButton" class="navbar-menu">
         <div class="navbar-menu-element"></div>
@@ -38,13 +39,13 @@
 
         <div class="navbar-icons-parent">
 
-          <ul class="navbar-icons">
+          <ul class="navbar-icons icons-navbar">
 
-            <li><a href="#"><img class="fill-white" src="./svg//svg2.svg" alt="github"></a></li>
+            <li><a href="https://github.com/Pinto2291"><img class="fill-white" src="./svg//svg2.svg" alt="github"></a></li>
   
-            <li><a href="#"><img class="fill-white" src="./svg/svg3.svg" alt="linkedin"></a></li>
+            <li><a href="https://www.linkedin.com/in/ignacio-pinto-04a010172/"><img class="fill-white" src="./svg/svg3.svg" alt="linkedin"></a></li>
   
-            <li><a href="#"><img class="fill-white" src="./svg/svg1.svg" alt="twitter"></a></li>
+            <li><a href="https://twitter.com/IgnacioFrontEnd"><img class="fill-white" src="./svg/svg1.svg" alt="twitter"></a></li>
           
           </ul>
 
@@ -82,11 +83,11 @@
 
     <!-- TITLE ABOUT -->
 
-    <h3 class="bold-700 fn-9 pointer about-title">A<span>bout</span>.</h3>
+    <h3 id="about" class="bold-700 fn-9 pointer about-title">A<span>bout</span>.</h3>
 
     <!-- TITLE ABOUT END -->
 
-    <section id="about" class="about">
+    <section class="about">
 
         <p class="title-section-font text-center font-white">I'm a <span class="font-red-1 about-section-span bold">Frontend Developer</span><br> that creates dinamic and visually <br> appealing websites</p>
 
@@ -107,13 +108,22 @@
 
     </section>
 
-    <h3 class="bold-700 fn-9 pointer services-title">Design.</h3>
+    <h3 id="design" class="bold-700 fn-9 pointer services-title">Design.</h3>
 
     <section class="services">
 
       <div class="services-section">
 
-        <p class="title-section-font text-center font-white">I use stable <span class="font-red-1 bold">code</span> <br> and <span class="font-red-1 bold">minimalist</span> design</p>
+        <div class="design-first-section">
+
+          <p class="title-section-font text-center font-white">I use stable <span class="font-red-1 bold">code</span> <br> and <span class="font-red-1 bold">minimalist</span> design</p>
+
+          <p class="title-section-font text-center font-white">HTML</p>
+          <p class="title-section-font text-center font-white">CSS</p>
+
+          <p class="title-section-font text-center font-white">JavaScript</p>
+
+        </div>
 
       </div>
 
@@ -159,7 +169,7 @@
 
     <!-- SECTION 3 - START -->
 
-    <h3 class="bold-700 fn-9 pointer section-3-title">Services.</h3>
+    <h3 id="services" class="bold-700 fn-9 pointer section-3-title">Services.</h3>
 
     <section class="section-3">
 
@@ -198,7 +208,7 @@
 
     <!-- SECTION 4 - Portfolio START -->
 
-    <h3 class="bold-700 fn-9 pointer section-4-title">Portfolio.</h3>
+    <h3 id="portfolio" class="bold-700 fn-9 pointer section-4-title">Portfolio.</h3>
 
     <section class="section-4">
 
@@ -213,7 +223,7 @@
 
     <!-- SECTION 5 - Certificates -->
 
-    <h3 class="bold-700 fn-9 pointer section-5-title">Certificates.</h3>
+    <h3 id="certificates" class="bold-700 fn-9 pointer section-5-title">Certificates.</h3>
 
     <section class="section-5">
 
@@ -414,7 +424,7 @@
 
     <!-- SECTION tools - start -->
 
-      <h3 class="bold-700 fn-9 pointer section-tools-title">Tools.</h3>
+      <h3 id="tools" class="bold-700 fn-9 pointer section-tools-title">Tools.</h3>
 
       <section class="section-tools">
 
@@ -463,15 +473,45 @@
 
     <!-- SECTION 6 - Contact Start -->
 
-    <h3 class="bold-700 fn-9 pointer section-6-title">Contact.</h3>
+    <h3 id="contact" class="bold-700 fn-9 pointer section-6-title">Contact.</h3>
 
     <section class="section-6">
-      <div class="section-6-name"></div>
+
+      <div class="section-6-name">
+
+        <div class="container-section-6-contact">
+
+            <label for="contact-name"><input type="text" id="contact-name" placeholder="What is your name?"></label>
+
+            <label for=contact-email"><input type="email" id="contact-email" placeholder="Please enter your email"></label>
+          
+            <label for="contact-phone"><input type="number" id="contact-phone" placeholder="Phone number"></label>
+          
+            <label for="contact-mensaje"><textarea name="mensaje" id="contact-mensaje" cols="30" rows="10" placeholder="Leave us a message."></textarea></label>
+
+            <input class="submit-message" type="submit" value="Send">
+
+        </div>
+
+      </div>
 
     </section>
 
-
     <!-- SECTION 6 - Contact END -->
+
+    <footer class="footer">
+
+      <ul class="navbar-icons icons-footer">
+
+        <li><a href="https://github.com/Pinto2291"><img class="fill-white" src="./svg//svg2.svg" alt="github"></a></li>
+
+        <li><a href="https://www.linkedin.com/in/ignacio-pinto-04a010172/"><img class="fill-white" src="./svg/svg3.svg" alt="linkedin"></a></li>
+
+        <li><a href="https://twitter.com/IgnacioFrontEnd"><img class="fill-white" src="./svg/svg1.svg" alt="twitter"></a></li>
+      
+      </ul>
+
+    </footer>
 
     <script src="./jquery.js"></script>
     <!-- <script src="./node_modules/animejs/lib/anime.min.js"></script> -->

@@ -124,6 +124,12 @@ $('.about-flex-art-item').on('click', (event) => {
     $(event.currentTarget).toggleClass('scale-80')
 })
 
+/* MENU ELEMENTS */
+$('.menu-element').on('click', () => {
+    $('.wrapper').toggleClass('custom');
+    $('.header').nextAll().fadeToggle(650);
+})
+
 /* CUBES for About section */
 
 let aboutSectionCubes = createCubes({
