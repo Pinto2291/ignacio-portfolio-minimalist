@@ -534,7 +534,12 @@ $('.sec-3-anime-3-play').on('click', () => {
     }
 })
 
+
 /*CARD SLIDER */
+
+/* Este codigo hace funcionar el card slider de los proyectos lo terminare mas tarde */
+
+/*
 let cardIndex = 1;
 showCards(cardIndex);
 
@@ -572,6 +577,8 @@ nextArrow.addEventListener('click', () => {
 prevArrow.addEventListener('click', () => {
     plusCards(-1)
 })
+
+*/
 
 /* SLIDER */
 
